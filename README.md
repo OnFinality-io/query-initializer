@@ -1,3 +1,3 @@
 # query-initializer
 
-prepare the query project before running the indexer service.
+init container for kubenetes to prepare the subquery git project before running the indexer service.

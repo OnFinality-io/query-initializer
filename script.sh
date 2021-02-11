@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# BUCKET_NAME="status.onfinality.me"
+# BUCKET_NAME=""
 # SUB_FOLDER=""
 # GIT_REPO=https://github.com/OnFinality-io/subql-starter
 # COMMIT=29dc0cf906c52fb36c6c93927293b88db86a3320
