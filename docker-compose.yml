@@ -1,0 +1,11 @@
+app:
+  build: .
+  command: sh script.sh
+  environment:
+    BUCKET_NAME: status.onfinality.me
+    # SUB_FOLDER: 
+    GIT_REPO: https://github.com/OnFinality-io/subql-starter
+    COMMIT: 29dc0cf906c52fb36c6c93927293b88db86a3320
+    AWS_ACCESS_KEY_ID: 
+    AWS_SECRET_ACCESS_KEY: 
+    AWS_DEFAULT_REGION: 
