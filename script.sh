@@ -31,8 +31,8 @@ isExist=$(aws s3 ls ${remoteFile}  --summarize | grep "Total Objects: " | sed 's
 
 function build() {
     # pull the clode
-    git clone $GIT_REPO ./data
-    cd ./data
+    git clone $GIT_REPO /data/subql
+    cd /data/subql
     git checkout $COMMIT
     cd ./$SUB_FOLDER
 
@@ -57,11 +57,11 @@ if [ $isExist == 0 ]; then
     build 
 else
     echo "start to download package from $remoteFile"
-    mkdir ./data
+    mkdir -p /data/subql
     localFile="${COMMIT}.tar.gz"
     aws s3 cp $remoteFile $localFile
     echo "extract from the package： $localFile"
-    tar -xzf $localFile -C ./data
+    tar -xzf $localFile -C /data/subql
     rm $localFile
 fi
 echo "initialize done"
