@@ -5,6 +5,21 @@
 # GIT_REPO=https://github.com/OnFinality-io/subql-starter
 # COMMIT=29dc0cf906c52fb36c6c93927293b88db86a3320
 
+if [ -z "${BUCKET_NAME}" ]; then
+    echo "BUCKET_NAME is unset"
+    exit 1
+fi
+
+if [ -z "${GIT_REPO}" ]; then
+    echo "GIT_REPO is unset"
+    exit 1
+fi
+
+if [ -z "${COMMIT}" ]; then
+    echo "COMMIT is unset"
+    exit 1
+fi
+
 path=$(echo $GIT_REPO | sed -E 's/^\s*.*:\/\///g')
 if [ "$SUB_FOLDER" != '' ]; then
     path=$path/$SUB_FOLDER
