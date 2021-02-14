@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# BUCKET_NAME=""
-# SUB_FOLDER=""
-# GIT_REPO=https://github.com/OnFinality-io/subql-starter
-# COMMIT=29dc0cf906c52fb36c6c93927293b88db86a3320
+BUCKET_NAME="subquery-packages"
+SUB_FOLDER="validator-threshold"
+GIT_REPO=https://github.com/OnFinality-io/subql-examples
+COMMIT=533feef92156da3284b5d5fc15ec6d587197f5fb
 
 if [ -z "${BUCKET_NAME}" ]; then
     echo "BUCKET_NAME is unset"
@@ -57,11 +57,11 @@ if [ $isExist == 0 ]; then
     build 
 else
     echo "start to download package from $remoteFile"
-    mkdir -p /data/subql
+    mkdir -p /data/subql/$SUB_FOLDER
     localFile="${COMMIT}.tar.gz"
     aws s3 cp $remoteFile $localFile
     echo "extract from the package： $localFile"
-    tar -xzf $localFile -C /data/subql
+    tar -xzf $localFile -C /data/subql/$SUB_FOLDER
     rm $localFile
 fi
 echo "initialize done"
